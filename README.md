@@ -24,12 +24,12 @@ npx cap sync
 ### canOpen()
 
 ```typescript
-canOpen() => Promise<boolean>
+canOpen() => Promise<{ value: boolean; }>
 ```
 
-Returns `true` if app can open interstitial modal sheet before linking out, `false` otherwise.
+Resolves with `value` === `true` if app can open interstitial modal sheet before linking out, `false` otherwise.
 
-**Returns:** <code>Promise&lt;boolean&gt;</code>
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 --------------------
 

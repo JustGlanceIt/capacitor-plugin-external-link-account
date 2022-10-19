@@ -1,8 +1,8 @@
 export interface ExternalLinkAccountPlugin {
   /**
-   * Returns `true` if app can open interstitial modal sheet before linking out, `false` otherwise.
+   * Resolves with `value` === `true` if app can open interstitial modal sheet before linking out, `false` otherwise.
    */
-  canOpen(): Promise<boolean>;
+  canOpen(): Promise<{ value: boolean }>;
 
   /**
    * Opens interstitial modal sheet before linking out if available,

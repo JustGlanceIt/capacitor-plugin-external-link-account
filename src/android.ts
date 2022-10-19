@@ -6,7 +6,7 @@ export class ExternalLinkAccountAndroid
   extends WebPlugin
   implements ExternalLinkAccountPlugin
 {
-  canOpen(): Promise<boolean> {
+  canOpen(): Promise<{ value: boolean }> {
     throw new Error('Method not implemented.');
   }
   open(): Promise<void> {
