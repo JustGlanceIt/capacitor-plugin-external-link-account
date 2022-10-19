@@ -5,7 +5,7 @@ Implement External Link Account requirements
 ## Install
 
 ```bash
-npm install capacitor-plugin-external-link-account
+npm install @justglanceit/capacitor-plugin-external-link-account
 npx cap sync
 ```
 
@@ -13,8 +13,8 @@ npx cap sync
 
 <docgen-index>
 
-- [`canOpen()`](#canopen)
-- [`open()`](#open)
+* [`canOpen()`](#canopen)
+* [`open()`](#open)
 
 </docgen-index>
 
@@ -31,7 +31,8 @@ Returns `true` if app can open interstitial modal sheet before linking out, `fal
 
 **Returns:** <code>Promise&lt;boolean&gt;</code>
 
----
+--------------------
+
 
 ### open()
 
@@ -44,6 +45,6 @@ throws exception if cannot link outside or modal is not available.
 
 Modal is available for `iOS 16.0` or greater.
 
----
+--------------------
 
 </docgen-api>
