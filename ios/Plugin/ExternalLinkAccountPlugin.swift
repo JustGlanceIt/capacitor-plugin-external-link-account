@@ -9,22 +9,26 @@ import Capacitor
 public class ExternalLinkAccountPlugin: CAPPlugin {
     private let implementation = ExternalLinkAccount()
 
-    @objc func canOpen(_ call: CAPPluginCall) async {
-        call.resolve([
-            "value": await implementation.canOpen()
-        ])
+    @objc public func canOpen(_ call: CAPPluginCall) {
+        Task {
+            call.resolve([
+                "value": await implementation.canOpen()
+            ])
+        }
     }
 
-    @objc func open(_ call: CAPPluginCall) async {
-        do {
-            try await implementation.open()
-            call.resolve()
-        } catch ExternalLinkAccountError.implementManually {
-            call.reject("ExternalLinkAccount modal must be implemented manually", nil, ExternalLinkAccountError.implementManually)
-        } catch ExternalLinkAccountError.cannotOpen {
-            call.reject("ExternalLinkAccount modal cannot be open", nil, ExternalLinkAccountError.cannotOpen)
-        } catch {
-            call.reject("ExternalLinkAccount modal cannot be open", nil, error)
+    @objc public func open(_ call: CAPPluginCall) {
+        Task {
+            do {
+                try await implementation.open()
+                call.resolve()
+            } catch ExternalLinkAccountError.implementManually {
+                call.unavailable("ExternalLinkAccount modal must be implemented manually")
+            } catch ExternalLinkAccountError.cannotOpen {
+                call.reject("ExternalLinkAccount modal cannot be open", nil, ExternalLinkAccountError.cannotOpen)
+            } catch {
+                call.reject("ExternalLinkAccount modal cannot be open", nil, error)
+            }
         }
     }
 }
