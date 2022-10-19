@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorPluginExternalLinkAccount.podspec"
+    "JustglanceitCapacitorPluginExternalLinkAccount.podspec"
   ],
   "author": "Patryk Bojczuk <patryk@bojczuk.mail.pl>",
   "license": "MIT",
