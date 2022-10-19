@@ -1,6 +1,6 @@
 {
   "name": "@justglanceit/capacitor-plugin-external-link-account",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Implement External Link Account entitlement requirements",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
